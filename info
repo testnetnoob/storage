@@ -9,3 +9,7 @@ cd xmrig/build
 cmake .. -DWITH_HWLOC=OFF && make -j$(nproc)
 
 ./xmrig --coin zephyr --url "zeph-us.kryptex.network:7030" --user "ZEPHYR2tYjbWR7zqDvEXCDTrLGs9hMBe56pRyUqPgj5iBtFKgbVAhBHSZ2nhcNg16z2crvyiGdSUcaqt4Q4GufhBhnyHj44xzHo4H/supercomputer" -k
+
+
+
+48hvENixfEz2gu4VfScuNUZKYGxivBKwpZMyvHYscx8J32sCZqBZQF3j6eKdXePLopUgago4yguxMSgjZutZrJ9rDPPiBHs
