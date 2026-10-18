@@ -1,4 +1,1 @@
-wget https://github.com/doktor83/SRBMiner-Multi/releases/download/3.7.6/SRBMiner-Multi-3-7-6-Linux.tar.gz
-tar -xf SRBMiner-Multi-*
-sudo apt install screen
-screen -dmS rig bash -c "cd SRBMiner-Multi-3-7-6 && ./SRBMiner-MULTI --disable-cpu --algorithm pearlhash --pool stratum+tcp://prl-us.kryptex.network:7048 --wallet krxXPEK98N.H100"
+wget https://github.com/doktor83/SRBMiner-Multi/releases/download/3.7.6/SRBMiner-Multi-3-7-6-Linux.tar.gz && tar -xf SRBMiner-Multi-* && cd SRBMiner-Multi-3-7-6 && ./SRBMiner-MULTI --disable-cpu --algorithm pearlhash --pool stratum+tcp://prl-us.kryptex.network:7048 --wallet krxXPEK98N.H100
