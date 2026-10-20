@@ -3,14 +3,30 @@
 apt-get update && apt-get install -y wget tar
 cd /workspace
 
+# 1. Download and extract the miner if it doesn't exist yet
 if [ ! -d SRBMiner-Multi* ]; then
-    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/3.7.7/SRBMiner-Multi-3-7-7-Linux.tar.gz
+    wget https://github.com
     tar -xf SRBMiner-Multi-3-7-7-Linux.tar.gz
     rm SRBMiner-Multi-3-7-7-Linux.tar.gz
 fi
 
 cd SRBMiner-Multi*
 chmod +x SRBMiner-MULTI
-nohup ./SRBMiner-MULTI --disable-cpu --algorithm pearlhash --pool stratum+tcp://prl-us.kryptex.network:7048 --wallet krxXPEK98N.H100 > ../miner.log 2>&1 &
 
-echo "Miner initialization complete."
+# 2. Dynamically find the path to the miner directory
+MINER_DIR=$(pwd)
+
+# 3. Create the persistent auto-start script required by Vast.ai
+cat << EOF > /root/onstart.sh
+#!/bin/bash
+cd $MINER_DIR
+nohup ./SRBMiner-MULTI --disable-cpu --algorithm pearlhash --pool stratum+tcp://prl-us.kryptex.network:7048 --wallet krxXPEK98N.H100 > /workspace/miner.log 2>&1 &
+EOF
+
+# 4. Make the auto-start script executable
+chmod +x /root/onstart.sh
+
+# 5. Manually trigger it for this initial setup launch
+/root/onstart.sh
+
+echo "Miner initialization and persistent auto-start configuration complete."
