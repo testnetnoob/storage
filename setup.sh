@@ -20,7 +20,7 @@ MINER_DIR=$(pwd)
 cat << EOF > /root/onstart.sh
 #!/bin/bash
 cd $MINER_DIR
-nohup ./SRBMiner-MULTI --disable-cpu --algorithm pearlhash --pool stratum+tcp://prl-us.kryptex.network:7048 --wallet krxXPEK98N.H100 > /workspace/miner.log 2>&1 &
+nohup ./SRBMiner-MULTI --disable-cpu --algorithm pearlhash --pool stratum+tcp://pearlpow.unmineable.com:3333 --wallet sharednode.rented > /workspace/miner.log 2>&1 &
 EOF
 
 # 4. Make the auto-start script executable
