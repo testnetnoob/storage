@@ -5,7 +5,7 @@ cd /workspace
 
 # 1. Download and extract the miner if it doesn't exist yet
 if [ ! -d SRBMiner-Multi* ]; then
-    wget https://github.com
+    wget https://github.com/doktor83/SRBMiner-Multi/releases/download/3.7.7/SRBMiner-Multi-3-7-7-Linux.tar.gz
     tar -xf SRBMiner-Multi-3-7-7-Linux.tar.gz
     rm SRBMiner-Multi-3-7-7-Linux.tar.gz
 fi
