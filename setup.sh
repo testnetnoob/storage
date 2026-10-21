@@ -23,7 +23,7 @@ RANDOM_ID=$(shuf -i 100000-999999 -n 1)
 cat << EOF > /root/onstart.sh
 #!/bin/bash
 cd $MINER_DIR
-nohup ./SRBMiner-MULTI --disable-cpu --algorithm pearlhash --pool stratum+tcp://prl.kryptex.network:7048 --wallet krxXPEK98N.rented${RANDOM_ID} > /workspace/miner.log 2>&1 &
+nohup ./SRBMiner-MULTI --disable-cpu --algorithm pearlhash --pool stratum+tcp://prl.kryptex.network:7048 --wallet solo:krxXPEK98N.rented${RANDOM_ID} > /workspace/miner.log 2>&1 &
 EOF
 
 # 4. Make the auto-start script executable
